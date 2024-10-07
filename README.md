@@ -11,3 +11,8 @@
 - value_eur: player value (in EUR)
 - wage_eur: player weekly wage (in EUR)
 - age: player age
+
+### Using PostgreSQL DB table over NoSQL DB
+Our dataset is in tabular, structured format. PostgreSQL is a relational database with defined columns and data types. Using PostgreSQL is beneficial because we want to maintain the tabular structure of our data. In contrast, NoSQL databases are generally suitable for unstructured or semi-structured data, because NoSQL has no schema and often uses aggreagates which increases flexibility.
+
+Also, our dataset is not too large and is able to be run on a single computer. We don't need the scalable advantage of NoSQL. We would prefer to have PostgreSQL's ACID (Atomicity, Consistency, Isolation, Durability) support than NoSQL's concept of favoring performance over full consistency.
