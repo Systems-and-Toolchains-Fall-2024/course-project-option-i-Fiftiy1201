@@ -117,6 +117,8 @@
 - club_flag_url: URL of the club nationality flag
 - nation_logo_url: URL of the national team logo
 - nation_flag_url: URL of the national flag
+- gender: player gender
+- year: year data collected
 
 </details>
 
