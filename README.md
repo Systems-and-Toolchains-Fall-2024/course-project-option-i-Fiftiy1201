@@ -11,6 +11,106 @@
 - value_eur: player value (in EUR)
 - wage_eur: player weekly wage (in EUR)
 - age: player age
+- dob: playet data of birth
+- height_cm: player height (in cm)
+- weight_kg: player weight (in kg)
+- club_team_id: club team_id on sofifa where the player plays
+- league_name: league name of the club
+- league_level: league rank of the club (e.g. English Premier League is 1, English League Championship is 2, etc.)
+- club_position: player position in the club (e.g. SUB means substitute, RES means reserve)
+- club_jersey_number: player jersey number in the club
+- club_loaned_from: club loaning out the player - if applicable
+- club_joined: date when the player joined his current club
+- club_contract_valid_until
+- nationality_id: player nationality id on sofifa
+- nationality_name: player nationality name
+- nation_team_id: national team_id on sofifa where the player plays
+- nation_position: player position in the national team
+- nation_jersey_number: player jersey number in the national team
+- preferred_foot: player preferred foot
+- weak_foot: player weak foot attribute
+- skill_moves: player skill moves attribute
+- international_reputation: player international reputation attribute
+- work_rate: player work rate attributes (attacking / defensive)
+- body_type: player body type
+- real_face: player real face
+- release_clause_eur: player release clause (in EUR) - if applicable
+- player_tags: player tags
+- player_traits: player traits
+- pace: player pace attribute
+- shooting: player shooting attribute
+- passing: player passing attribute
+- dribbling: player dribbling attribute
+- defending: player defending attribute
+- physic: player physic attribute
+- attacking_crossing: player crossing attribute
+- attacking_finishing: player finishing attribute
+- attacking_heading_accuracy: player heading accuracy attribute
+- attacking_short_passing: player short passing attribute
+- attacking_volleys: player volleys attribute
+- skill_dribbling: player dribbling attribute
+- skill_curve: player curve attribute
+- skill_fk_accuracy: player free-kick accuracy attribute
+- skill_long_passing: player long passing attribute
+- skill_ball_control: player ball control attribute
+- movement_acceleration: player acceleration attribute
+- movement_sprint_speed: player sprint speed attribute
+- movement_agility: player agility attribute
+- movement_reactions: player reactions attribute
+- movement_balance: player balance attribute
+- power_shot_power: player shot power attribute
+- power_jumping: player jumping attribute
+- power_stamina: player stamina attribute
+- power_strength: player strength attribute
+- power_long_shots: player long shots attribute
+- mentality_aggression: player aggression attribute
+- mentality_interceptions: player interceptions attribute
+- mentality_positioning: player positioning attribute
+- mentality_vision: player vision attribute
+- mentality_penalties: player penalties attribute
+- mentality_composure: player composure attribute
+- defending_marking_awareness: player marking awareness attribute
+- defending_standing_tackle: player standing tackle attribute
+- defending_sliding_tackle: player sliding tackle attribute
+- goalkeeping_diving: player GK diving attribute
+- goalkeeping_handling: player GK handling attribute
+- goalkeeping_kicking: player GK kicking attribute
+- goalkeeping_positioning: player GK positioning attribute
+- goalkeeping_reflexes: player GK reflexes attribute
+- goalkeeping_speed: player GK speed attribute
+- ls: player attribute playing as LS
+- st: player attribute playing as ST
+- rs: player attribute playing as RS
+- lw: player attribute playing as LW
+- lf: player attribute playing as LF
+- cf: player attribute playing as CF
+- rf: player attribute playing as RF
+- rw: player attribute playing as RW
+- lam: player attribute playing as LAM
+- cam: player attribute playing as CAM
+- ram: player attribute playing as RAM
+- lm: player attribute playing as LM
+- lcm: player attribute playing as LCM
+- cm: player attribute playing as CM
+- rcm: player attribute playing as RCM
+- rm: player attribute playing as RM
+- lwb: player attribute playing as LWB
+- ldm: player attribute playing as LDM
+- cdm: player attribute playing as CDM
+- rdm: player attribute playing as RDM
+- rwb: player attribute playing as RWB
+- lb: player attribute playing as LB
+- lcb: player attribute playing as LCB
+- cb: player attribute playing as CB
+- rcb: player attribute playing as RCB
+- rb: player attribute playing as RB
+- gk: player attribute playing as GK
+- player_face_url: URL of the player face
+- club_logo_url: URL of the club logo
+- club_flag_url: URL of the club nationality flag
+- nation_logo_url: URL of the national team logo
+- nation_flag_url: URL of the national flag
+
 
 ## Using PostgreSQL DB table over NoSQL DB
 Our dataset is in tabular, structured format. PostgreSQL is a relational database with defined columns and data types. Using PostgreSQL is beneficial because we want to maintain the tabular structure of our data. In contrast, NoSQL databases are generally suitable for unstructured or semi-structured data, because NoSQL has no schema and often uses aggreagates which increases flexibility.
