@@ -1,15 +1,13 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/VuODydzp)
 
-<details>
-<summary>Click to see feature descriptions</summary>
-- **sofifa_ID**: unique player ID on sofifa  
-- **player_url**: URL of the scraped player  
-- **short_name**: player short name  
-- **long_name**: player long name  
-</details>
 
 ## Group: Lixin Xu, Helen Yu
-## Feature description
+
+## Feature descriptions
+
+<details>
+<summary>Feature Descriptions</summary>
+
 - sofifa_ID: unique player ID on sofifa
 - player_url: URL of the scraped player
 - short_name: player short name
@@ -120,6 +118,7 @@
 - nation_logo_url: URL of the national team logo
 - nation_flag_url: URL of the national flag
 
+</details>
 
 ## Using PostgreSQL DB table over NoSQL DB
 Our dataset is in tabular, structured format. PostgreSQL is a relational database with defined columns and data types. Using PostgreSQL is beneficial because we want to maintain the tabular structure of our data. In contrast, NoSQL databases are generally suitable for unstructured or semi-structured data, because NoSQL has no schema and often uses aggreagates which increases flexibility.
