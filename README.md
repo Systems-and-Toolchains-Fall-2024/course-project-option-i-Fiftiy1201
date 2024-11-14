@@ -3,7 +3,7 @@
 
 ## Group: Lixin Xu, Helen Yu
 
-## Feature descriptions
+# Feature descriptions
 
 <details>
 <summary>Feature Descriptions</summary>
@@ -122,12 +122,7 @@
 
 </details>
 
-## Using PostgreSQL DB table over NoSQL DB
-Our dataset is in tabular, structured format. PostgreSQL is a relational database with defined columns and data types. Using PostgreSQL is beneficial because we want to maintain the tabular structure of our data. In contrast, NoSQL databases are generally suitable for unstructured or semi-structured data, because NoSQL has no schema and often uses aggreagates which increases flexibility.
-
-Also, our dataset is not too large and is able to be run on a single computer. We don't need the scalable advantage of NoSQL. We would prefer to have PostgreSQL's ACID (Atomicity, Consistency, Isolation, Durability) support than NoSQL's concept of favoring performance over full consistency.
-
-## Installation and Steps to run the code
+# Installation and Steps to run the code
 1. Follow typical methods to configure your PostgreSQL database and install pyspark in your virtual environment
 2. Download all data files ending in ```.csv``` from this github repo's ```data/``` folder to the ```data/``` folder in your local working directory. Do NOT change the name of the data file. Your working directory should look like this:
     - folder: ```data```
@@ -136,6 +131,8 @@ Also, our dataset is not too large and is able to be run on a single computer. W
     - file: ```project.ipynb```
 3. Change the ```username```, ```password```, ```url``` in ```db_properties``` (section highlighed) to those specific to your PostgreSQL database's 
 4. Start your postgresSQL service and run the ```project.ipynb``` code file from the beginning sequentially.
+5. Instructions on using the Feature Engineering part of the code:
+   
 
 ## Function Inputs
 ### Function 1
@@ -151,3 +148,38 @@ Also, our dataset is not too large and is able to be run on a single computer. W
 - ```orderby``` could either be 'highest' or 'lowest' in ```str```, which respectively mean the use wants the highest average age or the lowest average age.
 ### Function 3
 - ```df``` your original pyspark dataframe containing only data of male players
+
+### calculate_r2(y_true, y_pred), return r2
+### def train_model(model, train_loader, test_loader, learning_rate, num_epochs):, return avg_loss, train_losses, model 
+
+
+# Explanation on methods
+
+## Using PostgreSQL DB table over NoSQL DB
+Our dataset is in tabular, structured format. PostgreSQL is a relational database with defined columns and data types. Using PostgreSQL is beneficial because we want to maintain the tabular structure of our data. In contrast, NoSQL databases are generally suitable for unstructured or semi-structured data, because NoSQL has no schema and often uses aggreagates which increases flexibility.
+
+Also, our dataset is not too large and is able to be run on a single computer. We don't need the scalable advantage of NoSQL. We would prefer to have PostgreSQL's ACID (Atomicity, Consistency, Isolation, Durability) support than NoSQL's concept of favoring performance over full consistency.
+
+## PySpark
+For PySpark, the two selected regressors were Random Forests Regressor and Linear Regressor. The Random forest regressor was selected because it handles string-index categorical data well, where categories are represented numerically but the magnitude of the numbers do not imply real-life meanings. The Linear Regressor was chosen for its efficiency and straightforward implementation in handling linearly related data, which makes it a good baseline model in comparison with more complex methods.
+
+Tunable parameters for random forests:
+- Number of Trees (numTrees): Increasing the number of trees generally improved model stability and accuracy, though the improvement in accuracy brought by increasing number of treess becomes smaller at high values of numTrees.
+- Max Depth (maxDepth): Controls the depth of each tree, balancing model complexity and overfitting. Shallow trees had faster training times but lower accuracy, while deeper trees had improved accuracy with the risk of overfitting.
+
+Tunable Parameters for Linear Regression:
+- Regularization Parameter (regParam): This parameter controls the degree of regularization applied to the Linear Regressor, which helps reduce overfitting by penalizing large weights. Lower values of regParam allow the model to fit the data more closely, which can be beneficial in cases with simpler data but may lead to overfitting on more complex datasets. Higher values provide stronger regularization, which can improve generalization but may cause underfitting.
+- maxIter: This parameter determines the maximum number of iterations for the optimization algorithm. Increasing maxIter can allow the model more time to converge to the optimal solution, which may improve accuracy, especially if the dataset is large or complex. However, very high values for maxIter may lead to longer training times without significant accuracy gains.
+
+The Random Forest and Linear Regression models were chosen for their complementary strengths: Random Forests provide better handling of complex feature interactions and categorical data, while Linear Regression serves as an effective, interpretable baseline. By comparing both models, it’s possible to assess the linear versus non-linear relationships within the data and gain insights into model performance on this dataset.
+
+## PyTorch
+For PyTorch, two models were selected, a deep NN and a shallow NN. For the shallow NN, it was constructed with only one hidden layer of 64 neurons. The deep NN, has a more complex structure, with 4 hidden layers containing 128, 64, 32, and 16 neurons respectively. 
+
+Tunable parameters for neural networks: 
+
+- Learning Rate: Controls how big are the steps that the model takes to update weights. Higher learning rates can speed up convergence and help avoid stucking in local minima, but may risk overshooting and unstable training. Lower learning rates offer stability but may increase the time needed for convergence and may get model stuck in local minima. During tuning, we observed that lower learning rates (e.g., 0.0005) led to better performance in both deep and shallow NN, and we didn't see a visually obvious difference between them.
+
+- Epochs: The number of complete passes through the training dataset. Higher epoch counts typically improve accuracy by allowing the model more opportunities to learn more, though excessive epochs can lead to overfitting. Increasing epochs improved the accuracy of both shallow and deep NN model up to a certain threshold, after which led to overfitting. The DeepNN, in particular, we saw it significantly benefited from higher epochs (we compared 10 vs 40), as it has large amount of parameters and need more training iterations to learn.
+
+If needed, we could also adjust the number of hidden layers and number of neurons in each hidden layer to increase model accuracy. To compare the shallow and deep NN, with more hidden layers, the deep NN therotically should achieve lower losses and higher accuracy on test data, because it's able to capture more complex features than shallow NN. But this also requires more time to train the data compared to shallow NN. While deep NN has the capability to perform better on training and test data, its structure also makes it prone to overfitting problems.
