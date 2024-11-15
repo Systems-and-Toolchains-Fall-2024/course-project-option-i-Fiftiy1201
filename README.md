@@ -129,7 +129,8 @@
     - folder: data
         - players_15.csv
         - ....
-    - file: project.ipynb
+    - file: project_final.ipynb
+    - file: project_cloud.ipynb
 ```
 4. Change the `username`, `password`, `url` in `db_properties` (section highlighed) to those specific to your PostgreSQL database's 
 5. Start your postgresSQL service and run the `project_final.ipynb` code file from the beginning sequentially.
