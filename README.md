@@ -134,8 +134,11 @@
 
 ### Instructions on using the Feature Engineering part of the code
 This part has two modes:
+
     - ***MODE 1 - `proceed=FALSE`***: this mode is for users to know the necessary information for preprocessing, cleaning, and feature-engineering the dataset. It will print out number of nulls, number of outliers, and correlation matrix of the columns, but will not change anything about the data.
+    
     - ***MODE 2 - `proceed=TRUE`***: this mode will execute the specified edits to the dataframe and print out necessay before- and after-edit data to ensure the edit is successful.
+    
 ***Steps:***
 1. Run MODE 1 first, then from results, decide:
    - Which columns to drop, if so, set `drop=True` when instantiating MissingValueHandler(), then specify the the column names in the class definition.
