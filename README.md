@@ -125,12 +125,14 @@
 # Installation and Steps to run the code
 1. Follow typical methods to configure your PostgreSQL database and install pyspark in your virtual environment
 2. Download all data files ending in ```.csv``` from this github repo's ```data/``` folder to the ```data/``` folder in your local working directory. Do NOT change the name of the data file. Your working directory should look like this:
+```
     - folder: ```data```
         - players_15.csv
         - ....
     - file: ```project.ipynb```
-3. Change the ```username```, ```password```, ```url``` in ```db_properties``` (section highlighed) to those specific to your PostgreSQL database's 
-4. Start your postgresSQL service and run the ```project.ipynb``` code file from the beginning sequentially.
+```
+4. Change the ```username```, ```password```, ```url``` in ```db_properties``` (section highlighed) to those specific to your PostgreSQL database's 
+5. Start your postgresSQL service and run the ```project.ipynb``` code file from the beginning sequentially.
 
 ### Instructions on using the Feature Engineering part of the code
 This part has two modes:
