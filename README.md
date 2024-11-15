@@ -5,6 +5,7 @@
 
 ## Video link: 
 - https://drive.google.com/drive/u/0/folders/1kTtYN2NUaupDGre4QVCPQ36ksQtWLBds?ths=true
+- Two videos were included, the first part of the code walk through is in Video_1.mp4, and continued with the second part in Video_2.mp4.
 
 # Feature descriptions
 
