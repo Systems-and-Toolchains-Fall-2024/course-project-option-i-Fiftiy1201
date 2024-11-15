@@ -3,6 +3,9 @@
 
 ## Group: Lixin Xu, Helen Yu
 
+## Video link: 
+- https://drive.google.com/drive/u/0/folders/1kTtYN2NUaupDGre4QVCPQ36ksQtWLBds?ths=true
+
 # Feature descriptions
 
 <details>
