@@ -123,16 +123,16 @@
 </details>
 
 # Installation and Steps to run the code
-1. Follow typical methods to configure your PostgreSQL database and install pyspark in your virtual environment
-2. Download all data files ending in ```.csv``` from this github repo's ```data/``` folder to the ```data/``` folder in your local working directory. Do NOT change the name of the data file. Your working directory should look like this:
+1. Follow typical methods to configure your PostgreSQL database and install pyspark and other necessary libraries in your virtual environment
+2. Download all data files ending in `.csv` from this github repo's `data/` folder to the `data/` folder in your local working directory. Do NOT change the name of the data file. Your working directory should look like this:
 ```
-    - folder: ```data```
+    - folder: data
         - players_15.csv
         - ....
-    - file: ```project.ipynb```
+    - file: project.ipynb
 ```
-4. Change the ```username```, ```password```, ```url``` in ```db_properties``` (section highlighed) to those specific to your PostgreSQL database's 
-5. Start your postgresSQL service and run the ```project.ipynb``` code file from the beginning sequentially.
+4. Change the `username`, `password`, `url` in `db_properties` (section highlighed) to those specific to your PostgreSQL database's 
+5. Start your postgresSQL service and run the `project_final.ipynb` code file from the beginning sequentially.
 
 ### Instructions on using the Feature Engineering part of the code
 This part has two modes:
@@ -190,7 +190,7 @@ Our dataset is in tabular, structured format. PostgreSQL is a relational databas
 
 Also, our dataset is not too large and is able to be run on a single computer. We don't need the scalable advantage of NoSQL. We would prefer to have PostgreSQL's ACID (Atomicity, Consistency, Isolation, Durability) support than NoSQL's concept of favoring performance over full consistency.
 
-## PySpark
+## PySpark ML
 For PySpark, the two selected regressors were Random Forests Regressor and Linear Regressor. The Random forest regressor was selected because it handles string-index categorical data well, where categories are represented numerically but the magnitude of the numbers do not imply real-life meanings. The Linear Regressor was chosen for its efficiency and straightforward implementation in handling linearly related data, which makes it a good baseline model in comparison with more complex methods.
 
 Tunable parameters for random forests:
@@ -203,7 +203,7 @@ Tunable Parameters for Linear Regression:
 
 The Random Forest and Linear Regression models were chosen for their complementary strengths: Random Forests provide better handling of complex feature interactions and categorical data, while Linear Regression serves as an effective, interpretable baseline. By comparing both models, it’s possible to assess the linear versus non-linear relationships within the data and gain insights into model performance on this dataset.
 
-## PyTorch
+## PyTorch ML
 For PyTorch, two models were selected, a deep NN and a shallow NN. For the shallow NN, it was constructed with only one hidden layer of 64 neurons. The deep NN, has a more complex structure, with 4 hidden layers containing 128, 64, 32, and 16 neurons respectively. 
 
 Tunable parameters for neural networks: 
