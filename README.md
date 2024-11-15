@@ -134,8 +134,8 @@
 
 ### Instructions on using the Feature Engineering part of the code
 This part has two modes:
-    - ***MODE 1 - `proceed=FALSE`***: this mode is for users to know the necessary information for preprocessing, cleaning, and feature-engineering the dataset. It will print out number of nulls, number of outliers, and correlation matrix of the columns, but will not change anything about the data.
-    - ***MODE 2 - `proceed=TRUE`***: this mode will execute the specified edits to the dataframe and print out necessay before- and after-edit data to ensure the edit is successful.
+- ***MODE 1 - `proceed=FALSE`***: this mode is for users to know the necessary information for preprocessing, cleaning, and feature-engineering the dataset. It will print out number of nulls, number of outliers, and correlation matrix of the columns, but will not change anything about the data.
+- ***MODE 2 - `proceed=TRUE`***: this mode will execute the specified edits to the dataframe and print out necessay before- and after-edit data to ensure the edit is successful.
     
 ***Steps:***
 1. Run MODE 1 first, then from results, decide:
@@ -152,31 +152,31 @@ This part has two modes:
 - ```X``` is a year between (2015 and 2022, inclusively), in ```str```
 - ```Y``` is the number of clubs returned, a positive integer, in ```int```.
 - ```Z``` is a year that can hold the value of 2023 or a year after it, in ```str```
-- 
+  
 ### Function 2
 - ```df``` your original pyspark dataframe containing only data of male players
 - ```X``` represents the number of clubs returned, a positive integer, in ```int```
 - ```Y``` represents a year between 2015 and 2022 inclusively, in ```str```
 - ```orderby``` could either be 'highest' or 'lowest' in ```str```, which respectively mean the use wants the highest average age or the lowest average age.
-- 
+
 ### Function 3
 - ```df``` your original pyspark dataframe containing only data of male players
-
-### calculate_r2(y_true, y_pred), return r2
-- #### Parameters: 
+  
+### calculate_r2(y_true, y_pred)
+#### Parameters: 
 - ```y_true```: The true target values, provided as a tensor.
 - ```y_pred```: The predicted values from the model, provided as a tensor.
-- #### Returns:
+#### Returns:
 - ```r2```: A floating-point value representing the R² score, which indicates how well the predictions approximate the true values, with 1 being a perfect fit.
-- 
-### def train_model(model, train_loader, test_loader, learning_rate, num_epochs):, return avg_loss, train_losses, model 
-- #### Parameters:
+  
+### train_model(model, train_loader, test_loader, learning_rate, num_epochs)
+#### Parameters:
 - ```model```: The PyTorch model to be trained.
 - ```train_loader```: A PyTorch DataLoader object for loading the training data in batches.
 - ```test_loader```: A PyTorch DataLoader object for loading the test data in batches.
 - ```learning_rate```: A floating-point value specifying the learning rate for the optimizer.
 - ```num_epochs```: An integer specifying the number of training epochs.
-- #### Returns:
+#### Returns:
 - ```avg_loss```: The average loss over the entire training dataset.
 - ```train_losses```: A list of loss values recorded at each epoch, which can be used for plotting the training loss curve.
 - ```model```: The trained PyTorch model after completing the specified number of epochs.
